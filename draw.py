@@ -144,7 +144,7 @@ while True: # the main loop runs until you close the window
     generateScene()
     renderFrame()
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT or event.type== pygame.KEYDOWN or event.type==pygame.MOUSEBUTTONDOWN:  # close full screen display and quit program when mouse clicked, button pressed, or window closed.
             pygame.display.quit()
             pygame.quit()
             exit()
