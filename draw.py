@@ -46,7 +46,7 @@ def func3D(functionID,u,v): # 3d functions   f(u,v) -> (x,y,z)
 
 def generateScene():
     global timeSeconds 
-    timeSeconds = (time.clock_gettime_ns(0)-timeStart)/1000000000
+    timeSeconds = (time.monotonic_ns()-timeStart)/1000000000
     subdiv = 26
     functionID=0
     global tri
@@ -137,7 +137,7 @@ pygame.init() # getting a graphical screen
 global screenSizex,screenSizey,screen,timeStart
 screenSizex,screenSizey = (pygame.display.Info().current_w, pygame.display.Info().current_h)
 screen = pygame.display.set_mode((screenSizex,screenSizey))
-timeStart = time.clock_gettime_ns(0)
+timeStart = time.monotonic_ns()
 
 
 while True: # the main loop runs until you close the window
